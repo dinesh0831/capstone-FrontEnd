@@ -148,7 +148,7 @@ function Home() {
             <Box sx={{}}>
                 <Grid container spacing={2} style={{ padding: "20px" ,display:"flex",justifyContent:"center"}}>
                 <Grid  item>
-                <Card    sx={{ textDecoration:"none",height:300 ,maxWidth: 225 }}>
+                <Card    sx={{ textDecoration:"none",height:310 ,maxWidth: 225 }}>
                     <CardActionArea component={Link} to={`/where_we`}>
                 <CardMedia
                     component="img"
@@ -158,7 +158,7 @@ function Home() {
                     alt="beach"
                 />
                 <CardContent>
-                    <Typography variant="body2" color="text.primary">
+                    <Typography gutterBottom variant="h5" component="div">
                      The purpose of our lives is to be happy
                     </Typography>
                     
@@ -168,7 +168,7 @@ function Home() {
             </Card>
             </Grid>
             <Grid  item>
-                <Card    sx={{ textDecoration:"none",height:300 ,maxWidth: 225 }}>
+                <Card    sx={{ textDecoration:"none",height:310 ,maxWidth: 225 }}>
                     <CardActionArea component={Link} to={`/where_we`}>
                 <CardMedia
                     component="img"
@@ -178,7 +178,7 @@ function Home() {
                     alt="chairs"
                 />
                 <CardContent>
-                    <Typography variant="body2" color="text.primary">
+                    <Typography gutterBottom variant="h5" component="div">
                     Travel makes one modest, you see what a tiny place you occupy in the world.
                     </Typography>
                     
@@ -188,7 +188,7 @@ function Home() {
             </Card>
             </Grid>
             <Grid  item>
-                <Card    sx={{ textDecoration:"none",height:300 ,maxWidth: 225 }}>
+                <Card    sx={{ textDecoration:"none",height:310 ,maxWidth: 225 }}>
                     <CardActionArea component={Link} to={`/where_we`}>
                 <CardMedia
                     component="img"
@@ -198,7 +198,7 @@ function Home() {
                     alt="green iguana"
                 />
                 <CardContent>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography gutterBottom variant="h5" component="div">
                      Take only memories, leave only footprints.
                     </Typography>
                     
@@ -208,7 +208,7 @@ function Home() {
             </Card>
             </Grid>
             <Grid  item>
-                <Card    sx={{ textDecoration:"none",height:300 ,maxWidth: 225 }}>
+                <Card    sx={{ textDecoration:"none",height:310 ,maxWidth: 225 }}>
                     <CardActionArea component={Link} to={`/where_we`}>
                 <CardMedia
                     component="img"
@@ -218,7 +218,7 @@ function Home() {
                     alt="porch"
                 />
                 <CardContent>
-                    <Typography variant="body2" color="text.primary">
+                    <Typography gutterBottom variant="h5" component="div">
                     Never let the fear of striking out keep you from playing the game.
                     </Typography>
                     
@@ -228,7 +228,7 @@ function Home() {
             </Card>
             </Grid>
             <Grid  item>
-                <Card    sx={{ textDecoration:"none",height:300 ,maxWidth: 225 }}>
+                <Card    sx={{ textDecoration:"none",height:310 ,maxWidth: 225 }}>
                     <CardActionArea component={Link} to={`/where_we`}>
                 <CardMedia
                     component="img"
@@ -238,7 +238,7 @@ function Home() {
                     alt="garlic"
                 />
                 <CardContent>
-                    <Typography variant="body2" color="text.primary">
+                    <Typography gutterBottom variant="h5" component="div">
                      You only live once, but if you do it right, once is enough.
                     </Typography>
                     
