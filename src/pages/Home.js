@@ -178,7 +178,7 @@ function Home() {
                     alt="chairs"
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
+                    <Typography variant="body2" color="text.primary">
                     Travel makes one modest, you see what a tiny place you occupy in the world.
                     </Typography>
                     
@@ -218,7 +218,7 @@ function Home() {
                     alt="porch"
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
+                    <Typography variant="body2" color="text.primary">
                     Never let the fear of striking out keep you from playing the game.
                     </Typography>
                     
@@ -238,7 +238,7 @@ function Home() {
                     alt="garlic"
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
+                    <Typography variant="body2" color="text.primary">
                      You only live once, but if you do it right, once is enough.
                     </Typography>
                     
