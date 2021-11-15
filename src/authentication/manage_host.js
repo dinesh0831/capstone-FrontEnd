@@ -31,7 +31,7 @@ function Manage() {
 
         getPost()
 
-    })
+    },[])
     const history = useHistory()
     const editPage = (id) => {
         if (token) {
