@@ -155,11 +155,11 @@ function Home() {
                     height="140"
                     
                     src={beach}
-                    alt="green iguana"
+                    alt="beach"
                 />
                 <CardContent>
                     <Typography variant="body2" color="text.primary">
-                     hello to the everyone
+                     The purpose of our lives is to be happy
                     </Typography>
                     
                 </CardContent>
@@ -175,11 +175,11 @@ function Home() {
                     height="140"
                     
                     src={chairs}
-                    alt="green iguana"
+                    alt="chairs"
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                     hello to the everyone
+                    Travel makes one modest, you see what a tiny place you occupy in the world.
                     </Typography>
                     
                 </CardContent>
@@ -199,7 +199,7 @@ function Home() {
                 />
                 <CardContent>
                     <Typography variant="body2" color="text.secondary">
-                     hello to the everyone
+                     Take only memories, leave only footprints.
                     </Typography>
                     
                 </CardContent>
@@ -215,11 +215,11 @@ function Home() {
                     height="140"
                     
                     src={porch}
-                    alt="green iguana"
+                    alt="porch"
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                     hello to the everyone
+                    Never let the fear of striking out keep you from playing the game.
                     </Typography>
                     
                 </CardContent>
@@ -235,11 +235,11 @@ function Home() {
                     height="140"
                     
                     src={garlic}
-                    alt="green iguana"
+                    alt="garlic"
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                     hello to the everyone
+                     You only live once, but if you do it right, once is enough.
                     </Typography>
                     
                 </CardContent>
