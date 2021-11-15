@@ -27,7 +27,7 @@ function Photos() {
             data.append("file", files[i])
         }
 
-        const response = await axios.post(`${backEndUrl}/image/upload`, data,{
+        const response = await axios.post(`${backEndUrl}/images/upload`, data,{
             headers:{ clone:token}
           })
         onSuccess(response.data)
