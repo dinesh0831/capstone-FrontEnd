@@ -160,9 +160,9 @@ class Amenities extends React.Component {
                     display: 'flex',
                     flexDirection: 'row',
                     width: "100%",
-                    height: 620,
+                    height:"auto",
                     bgcolor: 'background.paper',
-                    margin: -3
+                   
                 }}>
                 <Box className="image" sx={{
                     width: "50%",
@@ -192,7 +192,7 @@ class Amenities extends React.Component {
                             display: "inline-block",
                             justifyContent: "center",
                             overflow: "auto",
-                            height: 470,
+                            height: 580,
                             width: "100%",
                         }}>
                             {/* standout amenity */}

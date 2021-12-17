@@ -42,10 +42,10 @@ const history=useHistory()
  }
 
   return (
-    <Box sx={{ margin: -1 }}>
+    <Box sx={{ height:"auto" }}>
 
-      <Box sx={{ width: "100%", height: 700, marginTop: -10,overflow:"hidden"}}>
-        <Box sx={{ width: "100%",height: 70,marginTop: 10, display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", position: "absolute" }}>
+      <Box sx={{ width: "100%",height:700  ,overflow:"hidden"}}>
+        <Box sx={{ width: "100%",height: 70,marginTop: 5, display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", position: "absolute" }}>
 
           <Box component={Link} to={"/"} sx={{ display: "flex", justifyContent: "center", alignItems: "center", textDecoration: "none", color: "white", padding: 2, '&:hover': { textDecoration: "underline" } }}><HomeIcon sx={{ fontSize: 24 }} /> <Typography sx={{ fontSize: 24, fontWeight: "bold", }}> Home</Typography></Box>
           <Box component={Link} to={"/where_we"} sx={{ display: "flex", justifyContent: "center", alignItems: "center", textDecoration: "none", color: "white", padding: 2, '&:hover': { textDecoration: "underline" } }}><MapIcon sx={{ fontSize: 24 }} /> <Typography sx={{ fontSize: 24, fontWeight: "bold", }}> where we go?</Typography></Box>
@@ -53,12 +53,12 @@ const history=useHistory()
         </Box>
 
         
-        <Box sx={{ position: "absolute",right:10,top:100, width: 500, display: "flex", justifyContent: "center", }}>
+        <Box sx={{ position: "absolute",right:10,top:150, width: 500, display: "flex", justifyContent: "center", }}>
           <Typography sx={{ fontSize: 48, textAlign: "center", color: "orange" }}> Earn with your property without any interupts </Typography>
 
         </Box>
         <Button variant="outlined" color="primary" onClick={letsGo}  sx={{ position: "absolute", right: 100, marginTop: 75,fontSize:24 }}> Let's Start</Button>
-        <Box component="img" src={door}></Box>
+        <Box component="img" sx={{height:"auto"}} src={door}></Box>
       </Box>
     </Box>
 

@@ -426,10 +426,10 @@ function Model() {
         flexDirection: 'row',
 
         width: "100%",
-        height: 620,
+        height: "auto",
 
         bgcolor: 'background.paper',
-        margin: -3
+        
       }}>
       <Box className="image" sx={{
         width:"50%",
@@ -442,10 +442,10 @@ function Model() {
         <Box className="top" sx={{ borderColor: "black", display: "flex", justifyContent: 'flex-end', height: "max-content", }}>
           <Box className="top-content" sx={{ margin: 2, }}><Button component={Link} to={`/manage_host`}>save&exit</Button></Box>
         </Box>
-        <Box className="middle" sx={{ display: "flex-inline", justifyContent: "center" ,overflow: "auto", height: 470, }}>
+        <Box className="middle" sx={{ display: "flex-inline", justifyContent: "center" ,overflow: "auto", height: 580, }}>
         {match.map(types => {
         
-          return(<Box component="button"  className="choosing" name="Type_of_house" key={types.type} value={types.type} onClick={()=>handleChange(params.id,types.type)} sx={{ border: 0.3, borderColor: "black", borderRadius: 3, margin: 2, bgcolor: "white", width:"75%", marginLeft:10,marginRight:10,height: 100,display: "flex-inline", '&:hover': { border: 2, }, '&:focus': { border: 2,  } }}>
+          return(<Box component="button"  className="choosing" name="Type_of_house" key={types.type} value={types.type} onClick={()=>handleChange(params.id,types.type)} sx={{ border: 0.3, borderColor: "black", borderRadius: 3, margin: 2, bgcolor: "white", width:"75%", marginLeft:10,marginRight:10,height: 100,display: "flex-inline", '&:hover': { border: 3 }, '&:focus': { border: 3,borderColor:"green"  } }}>
 
            <Box sx={{ typography: { fontSize: 24},}}>{types.type}</Box><br/>
            <Box sx={{ typography: { fontSize: 16}}}>{types.description}</Box>

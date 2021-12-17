@@ -47,10 +47,10 @@ class FloorPlan extends React.Component {
                     flexDirection: 'row',
 
                     width: "100%",
-                    height: 620,
+                    height: "auto",
 
                     bgcolor: 'background.paper',
-                    margin: -3
+                   
                 }}>
                 <Box className="image" sx={{
                     width: "50%",
@@ -62,7 +62,7 @@ class FloorPlan extends React.Component {
                     <Box className="top" sx={{ borderColor: "black", display: "flex", justifyContent: 'flex-end', height: "max-content", }}>
                         <Box className="top-content" sx={{ margin: 2, }}><Button component={Link} to={`/manage_host`}>save&exit</Button></Box>
                     </Box>
-                    <Box className="middle" sx={{ display: "flex-inline", width: "100%", justifyContent: "center", alignItem: "center", overflow: "auto", height: 470, }}>
+                    <Box className="middle" sx={{ display: "flex-inline", width: "100%", justifyContent: "center", alignItem: "center", overflow: "auto", height: 580, }}>
 
                         <Box sx={{ display: "flex", typography: { fontSize: 24 }, width: "75%", marginLeft: "10%", marginRight: "10%", marginTop: "5%" }}>
                             <Box sx={{ flexGrow: 1 }}>Guest</Box>

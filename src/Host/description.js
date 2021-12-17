@@ -31,10 +31,10 @@ function Description() {
                 flexDirection: 'row',
 
                 width: "100%",
-                height: 620,
+                height: "auto",
 
                 bgcolor: 'background.paper',
-                margin: -3
+                
             }}>
             <Box className="image" sx={{
                 width: "50%",
@@ -46,7 +46,7 @@ function Description() {
                 <Box className="top" sx={{ borderColor: "black", display: "flex", justifyContent: 'flex-end', height: "max-content", }}>
                     <Box className="top-content" sx={{ margin: 2, }}><Button component={Link} to={`/manage_host`}>save&exit</Button></Box>
                 </Box>
-                <Box className="middle" sx={{ display: "flex-inline", justifyContent: "center", alignItem: "center", overflow: "auto", height: 470, }}>
+                <Box className="middle" sx={{ display: "flex-inline", justifyContent: "center", alignItem: "center", overflow: "auto", height: 580, }}>
                     <Box sx={{display: "flex", justifyContent: "center", alignItem: "center"}}>
                         <Box component="h3"> </Box>
                       

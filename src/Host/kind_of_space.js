@@ -35,10 +35,10 @@ function KindfOFPlace() {
                     flexDirection: 'row',
 
                     width: "100%",
-                    height:620,
+                    height:"auto",
                   
                     bgcolor: 'background.paper',
-                    margin: -3
+                  
                 }}>
                 <Box className="image" sx={{
                     width:"50%",
@@ -50,11 +50,11 @@ function KindfOFPlace() {
                     <Box className="top" sx={{ borderColor: "black", display: "flex", justifyContent: 'flex-end', height: "max-content", }}>
                         <Box className="top-content" sx={{ margin: 2, }}><Button component={Link} to={`/manage_host`}>save&exit</Button></Box>
                     </Box>
-                    <Box className="middle" sx={{ display: "flex-inline", justifyContent: "center",alignItem:"center", overflow: "auto", height: 470,}}>
+                    <Box className="middle" sx={{ display: "flex-inline", justifyContent: "center",alignItem:"center", overflow: "auto", height: 580,}}>
                         {types.map(type => {
                         return <Box component="button" key={type} className="choosing" name="Type_of_house" value={type} onClick={()=>handleChange(params.id,type)} 
                         sx={{ border: 1, borderColor: "black",typography: { fontSize: 24 } , borderRadius: 3,margin: 2, bgcolor: "white", width: 250, height: 80, display: "flex", 
-                        justifyContent: "start", alignItems: 'center', marginLeft:25,paddingLeft: 3, '&:hover': { border: 2, }, '&:focus': { border: 2,  } }}>
+                        justifyContent: "start", alignItems: 'center', marginLeft:25,paddingLeft: 3, '&:hover': { border: 3, }, '&:focus': { border: 3,borderColor:"green"  } }}>
 
                             {type}
                         </Box>
