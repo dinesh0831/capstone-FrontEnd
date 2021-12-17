@@ -166,7 +166,7 @@ function PostList() {
 
                     return (
                         <Grid key={rows._id} item>
-                            <Card sx={{ textDecoration: "none", height: 300, Width: 250 }}>
+                            <Card sx={{ textDecoration: "none", height: 300, width: 250 }}>
                                 <CardActionArea component={Link} to={`/findOne/${rows._id}`}>
                                     <CardMedia
                                         component="img"
