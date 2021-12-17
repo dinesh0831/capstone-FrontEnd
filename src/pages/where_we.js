@@ -161,7 +161,7 @@ function PostList() {
                     <Box component={Link} to={"/host"} sx={{ display: "flex", justifyContent: "center", alignItems: "center", textDecoration: "none", color: "black", padding: 2, '&:hover': { textDecoration: "underline" } }}><PostAddIcon sx={{ fontSize: 24 }} /><Typography sx={{ fontSize: 24, fontWeight: "bold", }}> Host your place</Typography></Box>
                 </Box>
          
-            <Grid container spacing={2} style={{ padding: "20px" }}>
+            <Grid container spacing={2} style={{ padding: "20px" }} sx={{display:"flex",justifyContent: "center", alignItems: "center"}}>
                 {values.map(rows => {
 
                     return (
