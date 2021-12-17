@@ -71,6 +71,7 @@ function CardDetail() {
         return localStorage.getItem("clone") ? history.push("/profile") : history.push("/login")
     }
     const bookNow = async () => {
+        setBook("please wait for confirmation")
         if (token) {
             const decode = jwt.decode(token)
             const response = await axios.get(`${backEndUrl}/getpost/getone/${params.id}`)
