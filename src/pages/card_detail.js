@@ -85,12 +85,13 @@ function CardDetail() {
             console.log(booked)
             await booked.push(booking)
 
-            await axios.patch(`${backEndUrl}/posts/update/${params.id}`, {
+            const message=await axios.patch(`${backEndUrl}/posts/update/${params.id}`, {
                 booked
             },
                 {
                     headers: { clone: token }
                 })
+            setBook(message.data.message)
             const { data } = await axios.get(`${backEndUrl}/users/profile/${decode.user._id}`)
             const userBooking = {
                 startDate: value[0],
@@ -106,7 +107,7 @@ function CardDetail() {
             await axios.patch(`${backEndUrl}/users/wishlist/${decode.user._id}`, {
                 bookedList: bookedlist
             })
-            setBook( " *Your Booking Request successfully Send. please Check your Profile for more detail")
+            
         }
 
         else {
