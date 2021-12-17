@@ -49,7 +49,7 @@ function CardDetail() {
     const getPost = async () => {
         const { data } = await axios.get(`${backEndUrl}/getpost/getone/${params.id}`)
         setValues(data)
-        console.log(data)
+        
         setPhotos(data.photos)
         setAmenities(data.amenities)
         setHighlight(data.highlights)
@@ -61,13 +61,13 @@ function CardDetail() {
 
         getPost()
 
-    },[])
+    },)
     const loggedIn = () => {
 
         return localStorage.getItem("clone") ? localStorage.removeItem("clone") : history.push("/login")
     }
     const profile = () => {
-        console.log(history)
+       
         return localStorage.getItem("clone") ? history.push("/profile") : history.push("/login")
     }
     const bookNow = async () => {
@@ -85,13 +85,13 @@ function CardDetail() {
             console.log(booked)
             await booked.push(booking)
 
-            const message=await axios.patch(`${backEndUrl}/posts/update/${params.id}`, {
+            await axios.patch(`${backEndUrl}/posts/update/${params.id}`, {
                 booked
             },
                 {
                     headers: { clone: token }
                 })
-            setBook(message.data.message)
+           
             const { data } = await axios.get(`${backEndUrl}/users/profile/${decode.user._id}`)
             const userBooking = {
                 startDate: value[0],
@@ -104,9 +104,10 @@ function CardDetail() {
             const bookedlist = [...data.bookedList]
             await bookedlist.push(userBooking)
 
-            await axios.patch(`${backEndUrl}/users/wishlist/${decode.user._id}`, {
+            const message=await axios.patch(`${backEndUrl}/users/wishlist/${decode.user._id}`, {
                 bookedList: bookedlist
             })
+             setBook(message.data.message)
             
         }
 
