@@ -148,7 +148,7 @@ function Home() {
             <Box sx={{}}>
                 <Grid container spacing={2} style={{ padding: "20px" ,display:"flex",justifyContent:"center"}}>
                 <Grid  item>
-                <Card    sx={{ textDecoration:"none",height:300 ,maxWidth: 225 }}>
+                <Card    sx={{ textDecoration:"none",height:"auto" ,maxWidth: 225 }}>
                     <CardActionArea component={Link} to={`/where_we`}>
                 <CardMedia
                     component="img"
@@ -163,7 +163,7 @@ function Home() {
             </Card>
             </Grid>
             <Grid  item>
-                <Card    sx={{ textDecoration:"none",height:300 ,maxWidth: 225 }}>
+                <Card    sx={{ textDecoration:"none",height:"auto" ,maxWidth: 225 }}>
                     <CardActionArea component={Link} to={`/where_we`}>
                 <CardMedia
                     component="img"
@@ -178,7 +178,7 @@ function Home() {
             </Card>
             </Grid>
             <Grid  item>
-                <Card    sx={{ textDecoration:"none",height:300 ,maxWidth: 225 }}>
+                <Card    sx={{ textDecoration:"none",height:"auto" ,maxWidth: 225 }}>
                     <CardActionArea component={Link} to={`/where_we`}>
                 <CardMedia
                     component="img"
@@ -193,7 +193,7 @@ function Home() {
             </Card>
             </Grid>
             <Grid  item>
-                <Card    sx={{ textDecoration:"none",height:300 ,maxWidth: 225 }}>
+                <Card    sx={{ textDecoration:"none",height:"auto" ,maxWidth: 225 }}>
                     <CardActionArea component={Link} to={`/where_we`}>
                 <CardMedia
                     component="img"
@@ -208,7 +208,7 @@ function Home() {
             </Card>
             </Grid>
             <Grid  item>
-                <Card    sx={{ textDecoration:"none",height:300 ,maxWidth: 225 }}>
+                <Card    sx={{ textDecoration:"none",height:"auto" ,maxWidth: 225 }}>
                     <CardActionArea component={Link} to={`/where_we`}>
                 <CardMedia
                     component="img"
