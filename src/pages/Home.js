@@ -42,7 +42,7 @@ function Home() {
 
     const loggedIn = () => {
 
-        return localStorage.getItem("clone") ? localStorage.removeItem("clone") : history.push("/login")
+       return localStorage.getItem("clone") ? localStorage.removeItem("clone") : history.push("/login") 
     }
     const profile = () => {
         console.log(history)
@@ -130,7 +130,7 @@ function Home() {
 
 
 
-            <Box sx={{ height: 550, overflow: "hidden" }}>
+            <Box sx={{ height: "auto", overflow: "hidden" }}>
                 <Box component="img" sx={{
 
 
@@ -148,18 +148,18 @@ function Home() {
             <Box sx={{}}>
                 <Grid container spacing={2} style={{ padding: "20px" ,display:"flex",justifyContent:"center"}}>
                 <Grid  item>
-                <Card    sx={{ textDecoration:"none",height:310 ,maxWidth: 225 }}>
+                <Card    sx={{ textDecoration:"none",height:300 ,maxWidth: 225 }}>
                     <CardActionArea component={Link} to={`/where_we`}>
                 <CardMedia
                     component="img"
                     height="140"
                     
                     src={beach}
-                    alt="beach"
+                    alt="green iguana"
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                     The purpose of our lives is to be happy
+                    <Typography variant="body2" color="text.primary">
+                     hello to the everyone
                     </Typography>
                     
                 </CardContent>
@@ -168,18 +168,18 @@ function Home() {
             </Card>
             </Grid>
             <Grid  item>
-                <Card    sx={{ textDecoration:"none",height:310 ,maxWidth: 225 }}>
+                <Card    sx={{ textDecoration:"none",height:300 ,maxWidth: 225 }}>
                     <CardActionArea component={Link} to={`/where_we`}>
                 <CardMedia
                     component="img"
                     height="140"
                     
                     src={chairs}
-                    alt="chairs"
+                    alt="green iguana"
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                    Travel makes one modest, you see what a tiny place you occupy in the world.
+                     hello to the everyone
                     </Typography>
                     
                 </CardContent>
@@ -188,7 +188,7 @@ function Home() {
             </Card>
             </Grid>
             <Grid  item>
-                <Card    sx={{ textDecoration:"none",height:310 ,maxWidth: 225 }}>
+                <Card    sx={{ textDecoration:"none",height:300 ,maxWidth: 225 }}>
                     <CardActionArea component={Link} to={`/where_we`}>
                 <CardMedia
                     component="img"
@@ -198,8 +198,8 @@ function Home() {
                     alt="green iguana"
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                     Take only memories, leave only footprints.
+                    <Typography variant="body2" color="text.secondary">
+                     hello to the everyone
                     </Typography>
                     
                 </CardContent>
@@ -208,18 +208,18 @@ function Home() {
             </Card>
             </Grid>
             <Grid  item>
-                <Card    sx={{ textDecoration:"none",height:310 ,maxWidth: 225 }}>
+                <Card    sx={{ textDecoration:"none",height:300 ,maxWidth: 225 }}>
                     <CardActionArea component={Link} to={`/where_we`}>
                 <CardMedia
                     component="img"
                     height="140"
                     
                     src={porch}
-                    alt="porch"
+                    alt="green iguana"
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                    Never let the fear of striking out keep you from playing the game.
+                     hello to the everyone
                     </Typography>
                     
                 </CardContent>
@@ -228,18 +228,18 @@ function Home() {
             </Card>
             </Grid>
             <Grid  item>
-                <Card    sx={{ textDecoration:"none",height:310 ,maxWidth: 225 }}>
+                <Card    sx={{ textDecoration:"none",height:300 ,maxWidth: 225 }}>
                     <CardActionArea component={Link} to={`/where_we`}>
                 <CardMedia
                     component="img"
                     height="140"
                     
                     src={garlic}
-                    alt="garlic"
+                    alt="green iguana"
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                     You only live once, but if you do it right, once is enough.
+                     hello to the everyone
                     </Typography>
                     
                 </CardContent>
