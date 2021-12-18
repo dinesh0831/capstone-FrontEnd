@@ -157,12 +157,7 @@ function Home() {
                     src={beach}
                     alt="green iguana"
                 />
-                <CardContent>
-                    <Typography variant="body2" color="text.primary">
-                     hello to the everyone
-                    </Typography>
-                    
-                </CardContent>
+             
                 </CardActionArea>
                
             </Card>
@@ -177,12 +172,7 @@ function Home() {
                     src={chairs}
                     alt="green iguana"
                 />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                     hello to the everyone
-                    </Typography>
-                    
-                </CardContent>
+                
                 </CardActionArea>
                
             </Card>
@@ -197,12 +187,7 @@ function Home() {
                     src={house}
                     alt="green iguana"
                 />
-                <CardContent>
-                    <Typography variant="body2" color="text.secondary">
-                     hello to the everyone
-                    </Typography>
-                    
-                </CardContent>
+               
                 </CardActionArea>
                
             </Card>
@@ -217,12 +202,7 @@ function Home() {
                     src={porch}
                     alt="green iguana"
                 />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                     hello to the everyone
-                    </Typography>
-                    
-                </CardContent>
+               
                 </CardActionArea>
                
             </Card>
@@ -237,12 +217,7 @@ function Home() {
                     src={garlic}
                     alt="green iguana"
                 />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                     hello to the everyone
-                    </Typography>
-                    
-                </CardContent>
+               
                 </CardActionArea>
                
             </Card>
