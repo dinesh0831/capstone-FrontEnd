@@ -3,11 +3,11 @@ import { useState, useEffect } from "react";
 import MapIcon from '@mui/icons-material/Map';
 import PostAddIcon from '@mui/icons-material/PostAdd';
 import HomeIcon from '@mui/icons-material/Home';
-import { Button, Box, Typography, Card, CardMedia, CardActions, CardContent, CardActionArea, Grid, IconButton } from "@mui/material";
+import { Button, Box, Typography, Card, CardMedia,  CardContent, CardActionArea, Grid,} from "@mui/material";
 import { Link, useHistory,  } from "react-router-dom"
 import jwt from "jsonwebtoken"
 import { backEndUrl } from "../backend"
-import FavoriteIcon from '@mui/icons-material/Favorite';
+
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 
@@ -27,7 +27,7 @@ function PostList() {
     const [values, setValues] = useState([])
     
     const history = useHistory()
-    const [wish, setWish] = useState(false)
+    
     const [state, setState] = useState({
 
         right: false,
@@ -54,32 +54,7 @@ function PostList() {
         getPost()
 
     }, [])
-    const token = localStorage.getItem("clone")
-    const wishList = async (id, title, town) => {
-        if (token) {
-            const decode = await jwt.decode(token)
-            console.log(decode)
-            const { data } = await axios.get(`${backEndUrl}/users/profile/${decode.user._id}`)
-            const userWishlist = {
-                wishlightId: id,
-                wishlistTitle: title,
-                wishlistTown: town,
-
-            }
-
-
-            let wishlist = [...data.wishList]
-            await wishlist.push(userWishlist)
-            setWish(true)
-             await axios.patch(`${backEndUrl}/users/wishlist/${decode.user._id}`, {
-                wishList: wishlist
-            })
-        }
-        else {
-            history.push("/login")
-
-        }
-    }
+   
     const loggedIn = () => {
 
         return localStorage.getItem("clone") ? localStorage.removeItem("clone") : history.push("/login")
