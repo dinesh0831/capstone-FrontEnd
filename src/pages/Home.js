@@ -102,7 +102,7 @@ function Home() {
 
 
     return (
-        <Box sx={{ margin: -1 }}>
+        <Box sx={{ margin: -1,height:"auto" }}>
 
             <Box sx={{ width: "100%", height: 70, display: "flex", alignItems: "center", position: "absolute", justifyContent: "center", justifySelf: "center", overflow: "hidden" }}>
 
