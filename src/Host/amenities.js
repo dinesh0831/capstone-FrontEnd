@@ -192,7 +192,7 @@ class Amenities extends React.Component {
                             display: "inline-block",
                             justifyContent: "center",
                             overflow: "auto",
-                            height: 580,
+                            height:700,
                             width: "100%",
                         }}>
                             {/* standout amenity */}

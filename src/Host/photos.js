@@ -70,7 +70,7 @@ function Photos() {
                 sx={{
                     display: "flex",
                     justifyContent: 'flex-end',
-                    height: "max-content",
+                    height: "auto",
                 }}>
                 <Box className="top-content"
                     sx={{
@@ -82,7 +82,7 @@ function Photos() {
                     display: "inline-block",
                     justifyContent: "center",
                     overflow: "auto",
-                    height: 580,
+                    height: 700,
                     width: "100%",
                 }}>
                 <Box sx={{ typography: { fontSize: 24, fontWeight: "bold" }, marginLeft: 3 }}>

@@ -39,14 +39,15 @@ function Description() {
             <Box className="image" sx={{
                 width: "50%",
                 display: 'flex',
+                justifyContent:"center",
                 alignItems: 'center',
             }}>
                 <Box sx={{ typography: { fontSize: 50, fontWeight: "bold" }, textAlign: "center", color: "white", }} >let's describe your place</Box></Box>
             <Box sx={{ width: "50%", display: "flex-inline" }} >
-                <Box className="top" sx={{ borderColor: "black", display: "flex", justifyContent: 'flex-end', height: "max-content", }}>
+                <Box className="top" sx={{ borderColor: "black", display: "flex", justifyContent: 'flex-end', height: "auto", }}>
                     <Box className="top-content" sx={{ margin: 2, }}><Button component={Link} to={`/manage_host`}>save&exit</Button></Box>
                 </Box>
-                <Box className="middle" sx={{ display: "flex-inline", justifyContent: "center", alignItem: "center", overflow: "auto", height: 580, }}>
+                <Box className="middle" sx={{ display: "flex-inline", justifyContent: "center", alignItem: "center", overflow: "auto", height: 700, }}>
                     <Box sx={{display: "flex", justifyContent: "center", alignItem: "center"}}>
                         <Box component="h3"> </Box>
                       

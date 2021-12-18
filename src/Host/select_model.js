@@ -434,18 +434,21 @@ function Model() {
       <Box className="image" sx={{
         width:"50%",
         display: 'flex',
-        
+        justifyContent:"center",
         alignItems: 'center',
       }}>
         <Box sx={{ typography: { fontSize: 50, fontWeight: "bold" }, textAlign: "center", color: "white", }} >Which of these best describes your place?</Box></Box>
       <Box sx={{ width: "50%", display: "flex-inline" }} >
-        <Box className="top" sx={{ borderColor: "black", display: "flex", justifyContent: 'flex-end', height: "max-content", }}>
+        <Box className="top" sx={{ borderColor: "black", display: "flex", justifyContent: 'flex-end', height: "auto" }}>
           <Box className="top-content" sx={{ margin: 2, }}><Button component={Link} to={`/manage_host`}>save&exit</Button></Box>
         </Box>
-        <Box className="middle" sx={{ display: "flex-inline", justifyContent: "center" ,overflow: "auto", height: 580, }}>
+        <Box className="middle" sx={{ display: "flex-inline", overflow: "auto",height:700}}>
         {match.map(types => {
         
-          return(<Box component="button"  className="choosing" name="Type_of_house" key={types.type} value={types.type} onClick={()=>handleChange(params.id,types.type)} sx={{ border: 0.3, borderColor: "black", borderRadius: 3, margin: 2, bgcolor: "white", width:"75%", marginLeft:10,marginRight:10,height: 100,display: "flex-inline", '&:hover': { border: 3 }, '&:focus': { border: 3,borderColor:"green"  } }}>
+          return(<Box component="button"  className="choosing" name="Type_of_house" key={types.type} value={types.type} onClick={()=>handleChange(params.id,types.type)} 
+          sx={{ border: 0.3, borderColor: "black", 
+          borderRadius: 3, margin: 3, bgcolor: "white", width:700,  
+          marginLeft:5,display: "flex-inline",justifyContent:"center",alignItems:"center", '&:hover': { border: 3 }, '&:focus': { border: 3,borderColor:"green"  } }}>
 
            <Box sx={{ typography: { fontSize: 24},}}>{types.type}</Box><br/>
            <Box sx={{ typography: { fontSize: 16}}}>{types.description}</Box>

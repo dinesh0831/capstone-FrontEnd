@@ -97,7 +97,7 @@ class Security extends React.Component {
                         sx={{
                             display: "flex",
                             justifyContent: 'flex-end',
-                            height: "max-content",
+                            height: "auto",
                         }}>
                         <Box className="top-content"
                             sx={{
@@ -109,7 +109,7 @@ class Security extends React.Component {
                             display: "inline-block",
                             justifyContent: "center",
                             overflow: "auto",
-                            height: 580,
+                            height: 700,
                             width: "100%",
                         }}>
                            
