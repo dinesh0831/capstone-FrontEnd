@@ -41,7 +41,7 @@ class Register extends React.Component {
     render() {
         return (
             <Box sx={{ margin: -1 }}>
-                <Box sx={{ width: "100%", height: 700, marginTop: -10, overflow: "hidden" }}>
+                <Box sx={{ width: "100%", height: "auto", marginTop: -10, overflow: "hidden" }}>
                     <Box  sx={{ height: "max-content", width: 250, bgcolor: "white", marginTop: 20, marginLeft: 20, borderRadius: 2, display: "block", justifyContent: "center", position: 'absolute' }} >
 
                         <Box sx={{ display: "flex-inline", }}>
@@ -50,7 +50,7 @@ class Register extends React.Component {
                                 <TextField sx={{ margin: 1 }} id="outlined-basic" onChange={this.handleChange} name="name" value={this.state.name } label="name" variant="outlined" />
                                 <TextField sx={{ margin: 1 }} id="outlined-basic" onChange={this.handleChange} placeholder="10-digit Mobileno" name="mobileno" value={this.state.mobileno } label="Mobile Number" variant="outlined" />
                                 <TextField sx={{ margin:1 }} id="outlined-basic" onChange={this.handleChange} placeholder="abc@123.com"name="email" value={this.state.email } label="Email" variant="outlined" />
-                                <TextField sx={{ margin: 1 }} id="outlined-basic" onChange={this.handleChange} placeholder="[Aa-Zz] or [1-9]or Both " name="password" value={this.state.password } label="Password" type="password" variant="outlined" />
+                                <TextField sx={{ margin: 1 }} id="outlined-basic" onChange={this.handleChange} placeholder="[Aa-Zz] or [1-9]or Both " name="password" value={this.state.password } label="Password" variant="outlined" />
                                 <Typography sx={{ textAlign: "center",margin:1,color:"red" }}>{this.state.message }</Typography>
                                 <button style={{ marginLeft:75 }} variant="success" >Register</button>
                             </form>

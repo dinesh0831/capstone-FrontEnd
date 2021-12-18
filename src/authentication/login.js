@@ -7,7 +7,7 @@ import vintage from "../asset/vintage.jpg"
 import {backEndUrl} from "../backend"
 class Login extends React.Component {
     constructor(props) {
-        super()
+        super(props)
         this.state = {
             
             email:"",
@@ -43,14 +43,14 @@ class Login extends React.Component {
 
     return (
         <Box sx={{ margin: -1 }}>
-            <Box sx={{  width:"100%", height: 700, marginTop: -10, overflow: "hidden" }}>
+            <Box sx={{  width:"100%", height: "auto", marginTop: -10, overflow: "hidden" }}>
                 <Box sx={{ height: "max-content", width: 250, bgcolor: "white", marginTop: 20, marginLeft: 20,  borderRadius: 2, display: "block", justifyContent: "center", position: 'absolute' }} >
 
                     <Box sx={{ display: "flex-inline", }}>
                         <Typography sx={{ fontSize: 24, fontWeight: "bold", margin: 2 }}>LogIn</Typography>
                         <form onSubmit={this.handleSubmit}>
                             <TextField sx={{ margin: 2 }} id="outlined-basic" name="email" value={this.state.email} onChange={this.handleChange} label="Email" variant="outlined" />
-                            <TextField sx={{ margin: 2 }} id="outlined-basic"type="password"  name="password" value={this.state.password} onChange={this.handleChange} label="Password" variant="outlined" />
+                            <TextField sx={{ margin: 2 }} id="outlined-basic"  name="password" value={this.state.password} onChange={this.handleChange} label="Password" variant="outlined" />
                             <Typography sx={{ textAlign: "center",margin:1,color:"red" }}>{this.state.message }</Typography>
                             <button style={{ marginLeft:80 }} variant="success">LogIn</button>
                         </form>
