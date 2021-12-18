@@ -186,10 +186,7 @@ function PostList() {
                                         </Typography>
                                     </CardContent>
                                 </CardActionArea>
-                                <CardActions>
-                                    <IconButton onClick={() => wishList(rows._id, rows.title, rows.town)} size="small">{wish ? <FavoriteIcon sx={{ color: "red" }} /> : <FavoriteBorderIcon />}</IconButton>
-
-                                </CardActions>
+                               
                             </Card>
                         </Grid>)
                 })}
