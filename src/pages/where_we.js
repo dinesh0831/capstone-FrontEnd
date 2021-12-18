@@ -5,10 +5,10 @@ import PostAddIcon from '@mui/icons-material/PostAdd';
 import HomeIcon from '@mui/icons-material/Home';
 import { Button, Box, Typography, Card, CardMedia,  CardContent, CardActionArea, Grid,} from "@mui/material";
 import { Link, useHistory,  } from "react-router-dom"
-import jwt from "jsonwebtoken"
+
 import { backEndUrl } from "../backend"
 
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+
 
 
 
