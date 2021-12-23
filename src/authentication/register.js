@@ -40,8 +40,8 @@ class Register extends React.Component {
 
     render() {
         return (
-            <Box sx={{ margin: -1 }}>
-                <Box sx={{ width: "100%", height: "auto", marginTop: -10, overflow: "hidden" }}>
+            <Box sx={{  }}>
+                <Box sx={{ width: "100%", }}>
                     <Box  sx={{ height: "max-content", width: 250, bgcolor: "white", marginTop: 20, marginLeft: 20, borderRadius: 2, display: "block", justifyContent: "center", position: 'absolute' }} >
 
                         <Box sx={{ display: "flex-inline", }}>
@@ -62,7 +62,7 @@ class Register extends React.Component {
                         </Box>
 
                     </Box>
-                    <Box component="img" src={vintage}></Box>
+                    <Box component="img" sx={{ height:"100vh",width:"100%",backgroundRepeat:"no-repeat",backgroundSize:"cover",backgroundAttachment:"fixed",}} src={vintage}></Box>
                 </Box>
 
             </Box>
