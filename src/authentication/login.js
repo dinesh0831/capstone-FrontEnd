@@ -50,7 +50,7 @@ class Login extends React.Component {
                         <Typography sx={{ fontSize: 24, fontWeight: "bold", margin: 2 }}>LogIn</Typography>
                         <form onSubmit={this.handleSubmit}>
                             <TextField sx={{ margin: 2 }} id="outlined-basic" name="email" value={this.state.email} onChange={this.handleChange} label="Email" variant="outlined" />
-                            <TextField sx={{ margin: 2 }} id="outlined-basic"  name="password" value={this.state.password} onChange={this.handleChange} label="Password" variant="outlined" />
+                            <TextField sx={{ margin: 2 }} id="outlined-basic" type="password"  name="password" value={this.state.password} onChange={this.handleChange} label="Password" variant="outlined" />
                             <Typography sx={{ textAlign: "center",margin:1,color:"red" }}>{this.state.message }</Typography>
                             <button style={{ marginLeft:80 }} variant="success">LogIn</button>
                         </form>
