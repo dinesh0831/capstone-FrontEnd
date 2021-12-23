@@ -52,14 +52,14 @@ function Host() {
       </Box>
 
 
-      <Box sx={{ position: "absolute", width: 500,bottom:5,right:0 }}>
+      <Box sx={{ position: "absolute", width: 500,top:100,right:0 }}>
         <Typography sx={{ fontSize: 48, textAlign: "center", color: "orange" }}> Earn with your property without any interupts </Typography>
         <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-          <Button variant="outlined" color="primary" onClick={letsGo} sx={{}}> Let's Start</Button>
+          <Button variant="contained" color="primary" onClick={letsGo} sx={{}}> Let's Start</Button>
         </Box>
 
       </Box>
-      <Box component="img" sx={{ height: "auto",width:"100%" }} src={door}></Box>
+      <Box component="img" sx={{  height:"100vh",width:"100%",backgroundRepeat:"no-repeat",backgroundSize:"cover",backgroundAttachment:"fixed", }} src={door}></Box>
 
     </Box>
 
