@@ -28,7 +28,7 @@ import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 
 function Profile() {
     const [post, setPost] = useState([])
-    const [wishList,setWishlist]=useState([])
+    
     const [bookedList, setBookedlist]=useState([])
     const token = localStorage.getItem("clone")
     const [state, setState] = useState({
@@ -51,7 +51,7 @@ function Profile() {
         const { data } = await axios.get(`${backEndUrl}/users/profile/${decode.user._id}`)
         setPost(data)
         console.log(data)
-        setWishlist(data.wishList)
+       
         setBookedlist(data.bookedList)
         }
     }
@@ -59,7 +59,7 @@ function Profile() {
 
         getPost()
 
-    })
+    },[])
     const loggedIn = () => {
 
         return localStorage.getItem("clone") ? localStorage.removeItem("clone") : history.push("/login")
@@ -138,7 +138,7 @@ console.log(post)
                 <Box component={Link} to={"/where_we"} sx={{ display: "flex", justifyContent: "center", alignItems: "center", textDecoration: "none", color: "black", padding: 2, '&:hover': { textDecoration: "underline" } }}><MapIcon sx={{ fontSize: 24 }} /> <Typography sx={{ fontSize: 24, fontWeight: "bold", }}> where we go?</Typography></Box>
                 <Box component={Link} to={"/host"} sx={{ display: "flex", justifyContent: "center", alignItems: "center", textDecoration: "none", color: "black", padding: 2, '&:hover': { textDecoration: "underline" } }}><PostAddIcon sx={{ fontSize: 24 }} /><Typography sx={{ fontSize: 24, fontWeight: "bold", }}> Host your place</Typography></Box>
             </Box>
-            <Box sx={{ display: "flex", }}>
+            <Box sx={{ display: "flex",justifyContent:"center" }}>
                 <Box sx={{ display: "flex", justifyContent: "center" }}>
                     <Card sx={{ width: 250, height: "max-content" }}>
 
@@ -165,10 +165,10 @@ console.log(post)
                             <Table sx={{ minWidth: 700 }} aria-label="customized table">
                                 <TableHead>
                                     <TableRow>
-                                        <TableCell>Title</TableCell>
-                                        <TableCell align="right">Start Date</TableCell>
-                                        <TableCell align="right">End Date</TableCell>
-                                        <TableCell align="right">Preview</TableCell>
+                                        <TableCell sx={{fontWeight:"bold",fontSize:20}}>Title</TableCell>
+                                        <TableCell align="center" sx={{fontWeight:"bold",fontSize:20}}>Start Date</TableCell>
+                                        <TableCell align="center" sx={{fontWeight:"bold",fontSize:20}}>End Date</TableCell>
+                                        <TableCell align="center" sx={{fontWeight:"bold",fontSize:20}}>Preview</TableCell>
 
                                        
                                         
@@ -177,19 +177,19 @@ console.log(post)
 
                                 <TableBody>
 
-                                    {bookedList.map(row => {
+                                    {bookedList.map((row,index) => {
                                         return (
                                             <TableRow
-                                                key={row.startDate}
+                                                key={index}
                                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                                             >
                                                 <TableCell component="th" scope="row">
                                                     {row.title}
                                                 </TableCell>
 
-                                                <TableCell align="right">{row.startDate}</TableCell>
-                                                <TableCell align="right">{row.endDate}</TableCell>
-                                                <TableCell align="right"> <Button component={Link} to={`/findOne/${row.bookingId}`}>preview</Button></TableCell>
+                                                <TableCell align="center">{row.startDate}</TableCell>
+                                                <TableCell align="center">{row.endDate}</TableCell>
+                                                <TableCell align="center"> <Button component={Link} to={`/findOne/${row.bookingId}`}>preview</Button></TableCell>
                                                 
                                             </TableRow>)
 
@@ -198,43 +198,7 @@ console.log(post)
                             </Table>
                         </TableContainer>
                     </Box>
-                    <Box>
-                        <Typography gutterBottom variant="h5" component="div"> Wished List </Typography>
-                        <TableContainer component={Paper}>
-                            <Table sx={{ minWidth: 700 }} aria-label="customized table">
-                                <TableHead>
-                                    <TableRow>
-                                        <TableCell>Title</TableCell>
-                                       
-                                        <TableCell align="right">Town</TableCell>
-                                        <TableCell align="right">Preview</TableCell>
-                                       
-                                    </TableRow>
-                                </TableHead>
-
-                                <TableBody>
-
-                                    {wishList.map(row => {
-                                        return (
-                                            <TableRow
-                                                key={row.wishlightId}
-                                                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                                            >
-                                                <TableCell component="th" scope="row">
-                                                    {row.wishlistTitle}
-                                                </TableCell>
-
-                                                
-                                                <TableCell align="right">{row.wishlistTown}</TableCell>
-                                                <TableCell align="right"><Button component={Link} to={`/findOne/${row.wishlightId}`}>preview</Button></TableCell>
-                                                
-                                            </TableRow>)
-
-                                    })}
-                                </TableBody>
-                            </Table>
-                        </TableContainer>
-                    </Box>
+                
 
                 </Box>
             </Box>

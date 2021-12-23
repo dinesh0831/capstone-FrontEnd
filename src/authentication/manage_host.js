@@ -67,11 +67,11 @@ function Manage() {
                 <Table sx={{ minWidth: 700 }} aria-label="customized table">
                     <TableHead>
                         <TableRow>
-                            <TableCell>Title</TableCell>
-                            <TableCell align="right">Status</TableCell>
-                            <TableCell align="right">Town</TableCell>
-                            <TableCell align="right">Edit</TableCell>
-                            <TableCell align="right">Delete</TableCell>
+                            <TableCell sx={{fontWeight:"bold",fontSize:20}}>Title</TableCell>
+                            <TableCell align="right" sx={{fontWeight:"bold",fontSize:20}}>Status</TableCell>
+                            <TableCell align="right" sx={{fontWeight:"bold",fontSize:20}}>Town</TableCell>
+                            <TableCell align="right" sx={{fontWeight:"bold",fontSize:20}}>Edit</TableCell>
+                            <TableCell align="right" sx={{fontWeight:"bold",fontSize:20}}>Delete</TableCell>
                         </TableRow>
                     </TableHead>
 
