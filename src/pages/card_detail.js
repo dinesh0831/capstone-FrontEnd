@@ -11,7 +11,7 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import { backEndUrl } from "../backend"
 
-import frLocale from 'date-fns/locale/fr';
+
 
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
