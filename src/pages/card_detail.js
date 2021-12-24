@@ -289,7 +289,7 @@ function CardDetail() {
                 <Box sx={{ width: "30%", height: "50%", padding: 1, border: 1, borderRadius: 2,marginRight:5 }}>
                     
                     <Box className="date_picker" >
-                        <LocalizationProvider dateAdapter={AdapterDateFns} locale={frLocale}>
+                        <LocalizationProvider dateAdapter={AdapterDateFns} >
                             <DateRangePicker
                                 startText="Check-in"
                                 endText="Check-out"
