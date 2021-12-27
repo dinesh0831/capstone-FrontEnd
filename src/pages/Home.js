@@ -1,4 +1,4 @@
-import { Box,  Button, Typography,Grid,Card,CardMedia,CardActionArea,} from "@mui/material";
+import { Box,  Button, Typography,Grid,Card,CardMedia,CardContent,CardActionArea,} from "@mui/material";
 
 import React from "react";
 import { Link,  useHistory } from "react-router-dom"
@@ -102,7 +102,7 @@ function Home() {
 
 
     return (
-        <Box sx={{ margin: -1,height:"auto" }}>
+        <Box sx={{ height:"100vh",width:"100%",backgroundRepeat:"no-repeat",backgroundSize:"cover",backgroundAttachment:"fixed", }}>
 
             <Box sx={{ width: "100%", height: 70, display: "flex", alignItems: "center", position: "absolute", justifyContent: "center", justifySelf: "center", overflow: "hidden" }}>
 
@@ -130,7 +130,7 @@ function Home() {
 
 
 
-            <Box sx={{ height: "auto", overflow: "hidden" }}>
+            <Box sx={{ height: "auto", overflow: "hidden"  ,height:"80vh",width:"100%",backgroundRepeat:"no-repeat",backgroundSize:"cover",backgroundAttachment:"fixed", }}>
                 <Box component="img" sx={{
 
 
@@ -148,7 +148,7 @@ function Home() {
             <Box sx={{}}>
                 <Grid container spacing={2} style={{ padding: "20px" ,display:"flex",justifyContent:"center"}}>
                 <Grid  item>
-                <Card    sx={{ textDecoration:"none",height:"auto" ,maxWidth: 225 }}>
+                <Card    sx={{ textDecoration:"none",height:125 ,maxWidth: 225 }}>
                     <CardActionArea component={Link} to={`/where_we`}>
                 <CardMedia
                     component="img"
@@ -157,13 +157,13 @@ function Home() {
                     src={beach}
                     alt="green iguana"
                 />
-             
+              
                 </CardActionArea>
                
             </Card>
             </Grid>
             <Grid  item>
-                <Card    sx={{ textDecoration:"none",height:"auto" ,maxWidth: 225 }}>
+                <Card    sx={{ textDecoration:"none",height:125 ,maxWidth: 225 }}>
                     <CardActionArea component={Link} to={`/where_we`}>
                 <CardMedia
                     component="img"
@@ -172,13 +172,13 @@ function Home() {
                     src={chairs}
                     alt="green iguana"
                 />
-                
+              
                 </CardActionArea>
                
             </Card>
             </Grid>
             <Grid  item>
-                <Card    sx={{ textDecoration:"none",height:"auto" ,maxWidth: 225 }}>
+                <Card    sx={{ textDecoration:"none",height:125,maxWidth: 225 }}>
                     <CardActionArea component={Link} to={`/where_we`}>
                 <CardMedia
                     component="img"
@@ -187,13 +187,13 @@ function Home() {
                     src={house}
                     alt="green iguana"
                 />
-               
+                
                 </CardActionArea>
                
             </Card>
             </Grid>
             <Grid  item>
-                <Card    sx={{ textDecoration:"none",height:"auto" ,maxWidth: 225 }}>
+                <Card    sx={{ textDecoration:"none",height:125,maxWidth: 225 }}>
                     <CardActionArea component={Link} to={`/where_we`}>
                 <CardMedia
                     component="img"
@@ -202,13 +202,13 @@ function Home() {
                     src={porch}
                     alt="green iguana"
                 />
-               
+            
                 </CardActionArea>
                
             </Card>
             </Grid>
             <Grid  item>
-                <Card    sx={{ textDecoration:"none",height:"auto" ,maxWidth: 225 }}>
+                <Card    sx={{ textDecoration:"none",height:125 ,maxWidth: 225 }}>
                     <CardActionArea component={Link} to={`/where_we`}>
                 <CardMedia
                     component="img"

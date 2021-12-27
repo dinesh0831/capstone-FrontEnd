@@ -102,11 +102,11 @@ function CardDetail() {
             const bookedlist = [...data.bookedList]
             await bookedlist.push(userBooking)
 
-            await axios.patch(`${backEndUrl}/users/wishlist/${decode.user._id}`, {
+            const bookeddata=await axios.patch(`${backEndUrl}/users/wishlist/${decode.user._id}`, {
                 bookedList: bookedlist
             })
-            setBook( success.data.message)
-            console.log(success)
+            setBook( bookeddata.data.message)
+            
         }
 
         else {
