@@ -84,7 +84,7 @@ function CardDetail() {
             console.log(booked)
             await booked.push(booking)
 
-           const success= await axios.patch(`${backEndUrl}/posts/update/${params.id}`, {
+            await axios.patch(`${backEndUrl}/posts/update/${params.id}`, {
                 booked
             },
                 {
