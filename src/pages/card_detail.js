@@ -61,7 +61,7 @@ function CardDetail() {
 
         getPost()
 
-    },)
+    },[values])
     const loggedIn = () => {
 
         return localStorage.getItem("clone") ? localStorage.removeItem("clone") : history.push("/login")
