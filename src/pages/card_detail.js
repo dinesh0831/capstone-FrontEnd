@@ -1,5 +1,5 @@
 import axios from "axios"
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import MapIcon from '@mui/icons-material/Map';
 import PostAddIcon from '@mui/icons-material/PostAdd';
 import HomeIcon from '@mui/icons-material/Home';
@@ -10,7 +10,6 @@ import DateRangePicker from '@mui/lab/DateRangePicker'
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import { backEndUrl } from "../backend"
-
 
 
 import List from '@mui/material/List';
@@ -46,32 +45,31 @@ function CardDetail() {
     };
     const token = localStorage.getItem("clone")
     const history = useHistory()
-    const getPost = async () => {
+    const getPost =useCallback( async () => {
         const { data } = await axios.get(`${backEndUrl}/getpost/getone/${params.id}`)
         setValues(data)
-        
+       
         setPhotos(data.photos)
         setAmenities(data.amenities)
         setHighlight(data.highlights)
 
-    }
+    },[params.id])
 
 
     useEffect(() => {
 
         getPost()
 
-    },[values])
+    },[ getPost])
     const loggedIn = () => {
 
         return localStorage.getItem("clone") ? localStorage.removeItem("clone") : history.push("/login")
     }
     const profile = () => {
-       
+        console.log(history)
         return localStorage.getItem("clone") ? history.push("/profile") : history.push("/login")
     }
     const bookNow = async () => {
-        setBook("*Please wait for Confirmation")
         if (token) {
             const decode = jwt.decode(token)
             const response = await axios.get(`${backEndUrl}/getpost/getone/${params.id}`)
@@ -86,13 +84,12 @@ function CardDetail() {
             console.log(booked)
             await booked.push(booking)
 
-            await axios.patch(`${backEndUrl}/posts/update/${params.id}`, {
+           const success= await axios.patch(`${backEndUrl}/posts/update/${params.id}`, {
                 booked
             },
                 {
                     headers: { clone: token }
                 })
-           
             const { data } = await axios.get(`${backEndUrl}/users/profile/${decode.user._id}`)
             const userBooking = {
                 startDate: value[0],
@@ -105,11 +102,11 @@ function CardDetail() {
             const bookedlist = [...data.bookedList]
             await bookedlist.push(userBooking)
 
-            const message=await axios.patch(`${backEndUrl}/users/wishlist/${decode.user._id}`, {
+            await axios.patch(`${backEndUrl}/users/wishlist/${decode.user._id}`, {
                 bookedList: bookedlist
             })
-             setBook(message.data.message)
-            
+            setBook( success.data.message)
+            console.log(success)
         }
 
         else {
@@ -190,7 +187,7 @@ function CardDetail() {
             </Box>
             <Box sx={{ display: "flex" }}>
                 <Box sx={{ marginLeft: 5, width: "70%",border:.5,borderRadius:2,marginRight:5,padding:5 }}>
-                    <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+                    <ImageList sx={{ width: 800, height: 450 }} cols={3} rowHeight={164}>
                         {photos.map((item) => (
                             <ImageListItem key={item.originalname}>
                                 <img
