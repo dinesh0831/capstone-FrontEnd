@@ -4,7 +4,7 @@ import PostAddIcon from '@mui/icons-material/PostAdd';
 import HomeIcon from '@mui/icons-material/Home';
 import TableCell from '@mui/material/TableCell';
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import axios from "axios"
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -16,7 +16,7 @@ function Manage() {
     const [post, setPost] = useState([])
     const token = localStorage.getItem("clone")
 
-    const getPost = async () => {
+    const getPost = useCallback( async () => {
         try{
         const { data } = await axios.get(`${backEndUrl}/posts/save`, {
             headers: { clone: token }
@@ -26,12 +26,12 @@ function Manage() {
     catch(err){
         console.log(err)
     }
-    }
+    },[token])
     useEffect(() => {
 
         getPost()
 
-    })
+    },[getPost])
     const history = useHistory()
     const editPage = (id) => {
         if (token) {
