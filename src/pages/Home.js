@@ -1,4 +1,4 @@
-import { Box,  Button, Typography,Grid,Card,CardMedia,CardContent,CardActionArea,} from "@mui/material";
+import { Box,  Button, Typography,Grid,Card,CardMedia,CardActionArea,} from "@mui/material";
 
 import React from "react";
 import { Link,  useHistory } from "react-router-dom"
@@ -130,7 +130,7 @@ function Home() {
 
 
 
-            <Box sx={{ height: "auto", overflow: "hidden"  ,height:"80vh",width:"100%",backgroundRepeat:"no-repeat",backgroundSize:"cover",backgroundAttachment:"fixed", }}>
+            <Box sx={{  overflow: "hidden"  ,height:"80vh",width:"100%",backgroundRepeat:"no-repeat",backgroundSize:"cover",backgroundAttachment:"fixed", }}>
                 <Box component="img" sx={{
 
 
