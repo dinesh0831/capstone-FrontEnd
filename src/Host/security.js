@@ -139,12 +139,10 @@ class Security extends React.Component {
                             alignSelf: "flex-end",
                             marginTop: 3
                         }}>
-                        <Box sx={{
-                            flexGrow: 1
-                        }} >
-                            <Button  component={Link} to={`/Host/${this.props.match.params.id}/description`}>Back</Button></Box>
-                        <Box>
-                            <Button sx={{}} component={Link} to={`/Host/${this.props.match.params.id}/photos`}>Next</Button>
+                        <Box sx={{ flexGrow: 1,margin:1 }} >
+                            <Button  component={Link} variant ="contained" size="large" color="error" to={`/Host/${this.props.match.params.id}/description`}>Back</Button></Box>
+                        <Box sx={{margin:1 }}>
+                            <Button sx={{}} variant ="contained" size="large" color="primary" component={Link} to={`/Host/${this.props.match.params.id}/photos`}>Next</Button>
                         </Box>
                     </Box>
                 </Box>

@@ -43,8 +43,8 @@ function Host() {
   return (
 
 
-    <Box sx={{ width: "100%", height: "auto", }}>
-      <Box sx={{ width: "100%", height: 70, marginTop: 5, display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", position: "absolute" }}>
+    <Box sx={{ width: "100%", height: "auto",display:"flex" }}>
+      <Box sx={{ width: "100%", height: 70,  display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", position: "absolute" }}>
 
         <Box component={Link} to={"/"} sx={{ display: "flex", justifyContent: "center", alignItems: "center", textDecoration: "none", color: "white", padding: 2, '&:hover': { textDecoration: "underline" } }}><HomeIcon sx={{ fontSize: 24 }} /> <Typography sx={{ fontSize: 24, fontWeight: "bold", }}> Home</Typography></Box>
         <Box component={Link} to={"/where_we"} sx={{ display: "flex", justifyContent: "center", alignItems: "center", textDecoration: "none", color: "white", padding: 2, '&:hover': { textDecoration: "underline" } }}><MapIcon sx={{ fontSize: 24 }} /> <Typography sx={{ fontSize: 24, fontWeight: "bold", }}> where we go?</Typography></Box>
@@ -52,8 +52,8 @@ function Host() {
       </Box>
 
 
-      <Box sx={{ position: "absolute", width: 500,top:100,right:0 }}>
-        <Typography sx={{ fontSize: 48, textAlign: "center", color: "orange" }}> Earn with your property without any interupts </Typography>
+      <Box sx={{ position: "absolute", alignSelf:"center",width:500,right:"25%" }}>
+        <Typography sx={{ fontSize: 48, textAlign: "center", color: "orange",fontFamily:"times new roman,serif",fontWeight:"bold" }}> Earn with your property without any interupts </Typography>
         <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
           <Button variant="contained" color="primary" onClick={letsGo} sx={{}}> Let's Start</Button>
         </Box>

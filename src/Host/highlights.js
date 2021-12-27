@@ -161,12 +161,10 @@ class Highlight extends React.Component {
                             alignSelf: "flex-end",
                             marginTop: 3
                         }}>
-                        <Box sx={{
-                            flexGrow: 1
-                        }} >
-                            <Button  component={Link} to={`/Host/${this.props.match.params.id}/title`}>Back</Button></Box>
-                        <Box>
-                            <Button sx={{}} disabled={this.state.button} component={Link} to={`/Host/${this.props.match.params.id}/description`}>Next</Button>
+                        <Box  sx={{ flexGrow: 1,margin:1 }} >
+                            <Button  component={Link} variant ="contained" size="large" color="error" to={`/Host/${this.props.match.params.id}/title`}>Back</Button></Box>
+                        <Box sx={{margin:1 }}>
+                            <Button sx={{}} variant ="contained" size="large" color="primary"  disabled={this.state.button} component={Link} to={`/Host/${this.props.match.params.id}/description`}>Next</Button>
                         </Box>
                     </Box>
                 </Box>

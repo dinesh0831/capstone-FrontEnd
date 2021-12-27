@@ -119,12 +119,10 @@ function Photos() {
                     alignSelf: "flex-end",
                     marginTop: 3
                 }}>
-                <Box sx={{
-                    flexGrow: 1
-                }} >
-                    <Button  component={Link} to={`/Host/${params.id}/security`}>Back</Button></Box>
-                <Box>
-                    <Button sx={{}} component={Link} to={`/manage_host`}  >Next</Button>
+                <Box sx={{ flexGrow: 1,margin:1 }}>
+                    <Button  component={Link} variant ="contained" size="large" color="error" to={`/Host/${params.id}/security`}>Back</Button></Box>
+                <Box sx={{margin:1 }}>
+                    <Button sx={{}}  variant ="contained" size="large" color="primary" component={Link} to={`/manage_host`}  >Next</Button>
                 </Box>
             </Box>
         </Box>

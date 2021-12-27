@@ -40,9 +40,8 @@ function House() {
             sx={{
                 display: 'flex',
 
-
-                width: "100%",
-                height: "auto",
+               
+               
 
                 bgcolor: 'background.paper',
 
@@ -51,15 +50,15 @@ function House() {
                 width: "50%",
                 display: 'flex',
                 alignItems: 'center',
-                height: "auto",
+              
                 justifyContent: "center"
 
             }}
             >
                 <Box sx={{ typography: { fontSize: 50, fontWeight: "bold" }, textAlign: "center", color: "white", }} >What kind of place will you host?</Box>
             </Box>
-            <Box sx={{ width: "50%", display: "flex-inline", height: "auto" }} >
-                <Box className="top" sx={{ borderColor: "black", display: "flex", justifyContent: 'flex-end', height: "auto" }}>
+            <Box sx={{ width: "50%", display: "flex-inline",}} >
+                <Box className="top" sx={{ borderColor: "black", display: "flex", justifyContent: 'flex-end',  }}>
                     <Box className="top-content" sx={{ margin: 2, }} ><Button component={Link} to={`/manage_host`}>save&exit</Button></Box>
                 </Box>
                 <Box className="middle" sx={{ display: "flex-inline", justifyContent: "center", alignItems: 'center', overflow: "auto", }}>
@@ -74,11 +73,11 @@ function House() {
                     })}
                 </Box>
                 <Box className="end" sx={{ display: 'flex', alignSelf: "flex-end", marginTop: 3 }}>
-                    <Box sx={{ flexGrow: 1 }} >
-                        <Button component={Link} to={`/Host`}>Back</Button>
+                    <Box sx={{ flexGrow: 1,margin:1 }} >
+                        <Button component={Link} variant ="contained" size="large" color="error" to={`/Host`}>Back</Button>
                     </Box>
-                    <Box>
-                        <Button sx={{}} disabled={button} component={Link} to={`/Host/${params.id}/${houseType}/select_model`} >Next</Button>
+                    <Box sx={{margin:1 }}>
+                        <Button sx={{}} disabled={button} variant ="contained" size="large" color="primary" component={Link} to={`/Host/${params.id}/${houseType}/select_model`} >Next</Button>
                     </Box>
                 </Box>
             </Box>

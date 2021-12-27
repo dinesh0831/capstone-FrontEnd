@@ -46,7 +46,7 @@ class Address extends React.Component {
                     sx={{
                         display: 'flex',
                         flexDirection: 'row',
-
+                              
                         width: "100%",
                         height: "auto",
 
@@ -92,10 +92,10 @@ class Address extends React.Component {
                             </Box>
                         </Box>
                         <Box className="end" sx={{ display: 'flex', alignSelf: "flex-end", marginTop: 3 }} >
-                            <Box sx={{ flexGrow: 1 }} >
-                                <Button  component={Link} to={`/Host/${this.props.match.params.id}/price`}>Back</Button></Box>
-                            <Box>
-                                <Button sx={{}} disabled={this.state.button} component={Link} to={`/Host/${this.props.match.params.id}/amenities`}> Next</Button>
+                            <Box sx={{ flexGrow: 1,margin:1 }} >
+                                <Button  component={Link} variant ="contained" size="large" color="error" to={`/Host/${this.props.match.params.id}/price`}>Back</Button></Box>
+                            <Box sx={{margin:1 }}>
+                                <Button sx={{}} variant ="contained" size="large" color="primary" disabled={this.state.button} component={Link} to={`/Host/${this.props.match.params.id}/amenities`}> Next</Button>
                             </Box>
                         </Box>
                     </Box>

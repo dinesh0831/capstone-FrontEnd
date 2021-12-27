@@ -63,10 +63,10 @@ function KindfOFPlace() {
                     })}
                     </Box>
                     <Box className="end" sx={{ display: 'flex',  alignSelf: "flex-end", marginTop:3}}>
-                        <Box sx={{ flexGrow: 1 }} >
-                            <Button component={Link} to={`/Host/${params.id}/${house}/select_model`} >Back</Button></Box>
-                        <Box>
-                            <Button sx={{}} disabled={button} component={Link} to={`/Host/${params.id}/Floor_Plan`}>Next</Button>
+                        <Box sx={{ flexGrow: 1,margin:1 }} >
+                            <Button component={Link} variant ="contained" size="large" color="error" to={`/Host/${params.id}/${house}/select_model`} >Back</Button></Box>
+                        <Box sx={{margin:1 }}>
+                            <Button sx={{}} disabled={button} variant ="contained" size="large" color="primary" component={Link} to={`/Host/${params.id}/Floor_Plan`}>Next</Button>
                         </Box>
                     </Box>
                 </Box>

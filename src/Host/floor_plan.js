@@ -101,11 +101,11 @@ class FloorPlan extends React.Component {
 
                     </Box>
                     <Box className="end" sx={{ display: 'flex', alignSelf: "flex-end", marginTop: 3 }}>
-                        <Box sx={{ flexGrow: 1 }} >
-                            <Button  component={Link} to={`/Host/${this.props.match.params.id}/kind_of_place`}>Back</Button>
+                        <Box sx={{ flexGrow: 1,margin:1 }} >
+                            <Button  component={Link} variant ="contained" size="large" color="error"  to={`/Host/${this.props.match.params.id}/kind_of_place`}>Back</Button>
                             </Box>
-                        <Box>
-                            <Button sx={{}} disabled={this.state.button} component={Link} to={`/Host/${this.props.match.params.id}/Price`}>Next</Button>
+                        <Box sx={{margin:1 }}>
+                            <Button sx={{}} disabled={this.state.button}  variant ="contained" size="large" color="primary"  component={Link} to={`/Host/${this.props.match.params.id}/Price`}>Next</Button>
                         </Box>
                     </Box>
                 </Box>
