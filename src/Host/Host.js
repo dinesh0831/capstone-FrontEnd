@@ -53,8 +53,8 @@ function Host() {
 
 
       <Box sx={{ position: "absolute", alignSelf:"center",width:500,right:"25%" }}>
-        <Typography sx={{ fontSize: 52, textAlign: "center", color: "darkorange",fontFamily:"Cursive",fontWeight:"bold" }}> "Have nothing in your house that you do not know to be useful, or believe to be beautiful."  </Typography>
-        <Typography sx={{ fontSize:48, textAlign: "end", color: "darkorange",fontFamily:"Cursive" }}> -William Morris </Typography>
+        <Typography sx={{ fontSize: 48, textAlign: "center", color: "darkorange",fontFamily:"Cursive",fontWeight:"bold",textShadow:"0 2px 0 rgba(0,0,0,1),0 3px 0 #ccc" }}> "Have nothing in your house that you do not know to be useful, or believe to be beautiful."  </Typography>
+        <Typography sx={{ fontSize:48, textAlign: "end", color: "darkorange",fontFamily:"Cursive", textShadow:"0 2px 0 rgba(0,0,0,1),0 3px 0 #ccc" }}> -William Morris </Typography>
         <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
           <Button variant="contained" color="primary" onClick={letsGo} sx={{}}> Let's Start</Button>
         </Box>
