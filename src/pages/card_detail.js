@@ -10,8 +10,8 @@ import DateRangePicker from '@mui/lab/DateRangePicker'
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import { backEndUrl } from "../backend"
-
-
+import { ToastContainer,toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -27,7 +27,7 @@ function CardDetail() {
     const [photos, setPhotos] = useState([])
     const [amenities, setAmenities] = useState([])
     const [highlight, setHighlight] = useState([])
-    const [book, setBook] = useState("")
+   
 
 
     const params = useParams()
@@ -98,14 +98,14 @@ function CardDetail() {
                 bookingId: params.id,
                 title: values.title,
             }
-
+             console.log(data)
             const bookedlist = [...data.bookedList]
             await bookedlist.push(userBooking)
 
             const bookeddata=await axios.patch(`${backEndUrl}/users/wishlist/${decode.user._id}`, {
                 bookedList: bookedlist
             })
-            setBook( bookeddata.data.message)
+            toast.success(bookeddata.data.message)
             
         }
 
@@ -185,12 +185,13 @@ function CardDetail() {
                 <Box component={Link} to={"/where_we"} sx={{ display: "flex", justifyContent: "center", alignItems: "center", textDecoration: "none", color: "black", padding: 2, '&:hover': { textDecoration: "underline" } }}><MapIcon sx={{ fontSize: 24 }} /> <Typography sx={{ fontSize: 24, fontWeight: "bold", }}> where we go?</Typography></Box>
                 <Box component={Link} to={"/host"} sx={{ display: "flex", justifyContent: "center", alignItems: "center", textDecoration: "none", color: "black", padding: 2, '&:hover': { textDecoration: "underline" } }}><PostAddIcon sx={{ fontSize: 24 }} /><Typography sx={{ fontSize: 24, fontWeight: "bold", }}> Host your place</Typography></Box>
             </Box>
-            <Box sx={{ display: "flex" }}>
-                <Box sx={{ marginLeft: 5, width: "70%",border:.5,borderRadius:2,marginRight:5,padding:5 }}>
-                    <ImageList sx={{ width: 800, height: 450 }} cols={3} rowHeight={164}>
+            <Box sx={{ display: "flex",margin:5 }}>
+                <Box sx={{ width: "70%",border:.5,borderRadius:2,padding:3 ,margin:1}}>
+                    <ImageList sx={{ width: "100%", height: 450}} cols={3} rowHeight={164}>
                         {photos.map((item) => (
-                            <ImageListItem key={item.originalname}>
+                            <ImageListItem key={item.originalname} >
                                 <img
+                                style={{height:100,width:"100%"}}
                                     src={`${backEndUrl}/${item.filename}?w=164&h=164&fit=crop&auto=format`}
                                     srcSet={`${backEndUrl}/${item.filename}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
                                     alt={item.title}
@@ -211,9 +212,10 @@ function CardDetail() {
                                 sx={{
                                     display: "flex",
 
-                                    overflow: "auto",
+                                   width:"100%",
+                                   overflow:"auto",
                                     height: "auto",
-                                    width: "100%",
+                                    
                                 }}>
                                 {amenities.map((types, row) => {
 
@@ -283,11 +285,12 @@ function CardDetail() {
                     </Box>
 
                 </Box>
-                <Box sx={{ width: "30%", height: "50%", padding: 1, border: 1, borderRadius: 2,marginRight:5 }}>
+                <Box sx={{ width: "30%", height: "50%", border:.5,borderRadius:2,padding:3,margin:1 }}>
                     
                     <Box className="date_picker" >
                         <LocalizationProvider dateAdapter={AdapterDateFns} >
                             <DateRangePicker
+                              minDate={new Date()}
                                 startText="Check-in"
                                 endText="Check-out"
                                 value={value}
@@ -307,7 +310,7 @@ function CardDetail() {
                             <Button onClick={bookNow}>Book Now</Button>
                         </Box>
                         
-                        <Typography sx={{color:"green",border:"black",textAlign:"center" }}>{book}</Typography>
+                        <ToastContainer/>
                         
 
                     </Box>
