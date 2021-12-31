@@ -63,7 +63,11 @@ function CardDetail() {
     },[ getPost])
     const loggedIn = () => {
 
-        return localStorage.getItem("clone") ? localStorage.removeItem("clone") : history.push("/login")
+        if( localStorage.getItem("clone") ){ 
+            localStorage.removeItem("clone")
+            toast.success("Logged out!!") }
+        else{
+             history.push("/login") }
     }
     const profile = () => {
         console.log(history)
@@ -285,7 +289,7 @@ function CardDetail() {
                     </Box>
 
                 </Box>
-                <Box sx={{ width: "30%", height: "50%", border:.5,borderRadius:2,padding:3,margin:1 }}>
+                <Box sx={{ width: "30%", height:"max-content", border:.5,borderRadius:2,padding:3,margin:1 }}>
                     
                     <Box className="date_picker" >
                         <LocalizationProvider dateAdapter={AdapterDateFns} >
@@ -310,15 +314,16 @@ function CardDetail() {
                             <Button onClick={bookNow}>Book Now</Button>
                         </Box>
                         
-                        <ToastContainer/>
+                        
                         
 
                     </Box>
 
-
-
+                    
 
                 </Box>
+                <ToastContainer/>
+
             </Box>
         </Box>
     )

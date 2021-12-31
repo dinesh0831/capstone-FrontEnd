@@ -3,13 +3,14 @@ import { useState, useEffect } from "react";
 import MapIcon from '@mui/icons-material/Map';
 import PostAddIcon from '@mui/icons-material/PostAdd';
 import HomeIcon from '@mui/icons-material/Home';
-import { Button, Box, Typography, Card, CardMedia,  CardContent, CardActionArea, Grid,} from "@mui/material";
+import { Button, Box, Typography, Card, CardMedia, CardActions, CardContent, CardActionArea, Grid, IconButton } from "@mui/material";
 import { Link, useHistory,  } from "react-router-dom"
-
+import jwt from "jsonwebtoken"
 import { backEndUrl } from "../backend"
-
-
-
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { ToastContainer,toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"
 
 
 import List from '@mui/material/List';
@@ -27,7 +28,7 @@ function PostList() {
     const [values, setValues] = useState([])
     
     const history = useHistory()
-    
+    const [wish,setWish]=useState()
     const [state, setState] = useState({
 
         right: false,
@@ -54,10 +55,39 @@ function PostList() {
         getPost()
 
     }, [])
-   
+    const token = localStorage.getItem("clone")
+    const wishList = async (id, title, town) => {
+        if (token) {
+            const decode = await jwt.decode(token)
+            console.log(decode)
+            const { data } = await axios.get(`${backEndUrl}/users/profile/${decode.user._id}`)
+            const userWishlist = {
+                wishlightId: id,
+                wishlistTitle: title,
+                wishlistTown: town,
+
+            }
+
+
+            let wishlist = [...data.wishList]
+            await wishlist.push(userWishlist)
+            setWish( true)
+             await axios.patch(`${backEndUrl}/users/wishlist/${decode.user._id}`, {
+                wishList: wishlist
+            })
+        }
+        else {
+            history.push("/login")
+
+        }
+    }
     const loggedIn = () => {
 
-        return localStorage.getItem("clone") ? localStorage.removeItem("clone") : history.push("/login")
+        if( localStorage.getItem("clone") ){ 
+            localStorage.removeItem("clone")
+            toast.success("Logged out!!") }
+        else{
+             history.push("/login") }
     }
     const profile = () => {
         console.log(history)
@@ -136,12 +166,12 @@ function PostList() {
                     <Box component={Link} to={"/host"} sx={{ display: "flex", justifyContent: "center", alignItems: "center", textDecoration: "none", color: "black", padding: 2, '&:hover': { textDecoration: "underline" } }}><PostAddIcon sx={{ fontSize: 24 }} /><Typography sx={{ fontSize: 24, fontWeight: "bold", }}> Host your place</Typography></Box>
                 </Box>
          
-            <Grid container spacing={2} style={{ padding: "20px" }} sx={{display:"flex",justifyContent: "center", alignItems: "center"}}>
+            <Grid container spacing={2} style={{ padding: "20px" }}>
                 {values.map(rows => {
 
                     return (
                         <Grid key={rows._id} item>
-                            <Card sx={{ textDecoration: "none", height: 300, width: 250 }}>
+                            <Card sx={{ textDecoration: "none", height: 300, width:250 }}>
                                 <CardActionArea component={Link} to={`/findOne/${rows._id}`}>
                                     <CardMedia
                                         component="img"
@@ -161,11 +191,15 @@ function PostList() {
                                         </Typography>
                                     </CardContent>
                                 </CardActionArea>
-                               
+                                <CardActions>
+                                    <IconButton onClick={() => wishList(rows._id, rows.title, rows.town)} size="small">{wish ? <FavoriteIcon sx={{ color: "red" }} /> : <FavoriteBorderIcon />}</IconButton>
+
+                                </CardActions>
                             </Card>
                         </Grid>)
                 })}
             </Grid>
+            <ToastContainer/>
         </Box>
 
     )

@@ -1,4 +1,4 @@
-import { Box,  Button, Typography,Grid,Card,CardMedia,CardActionArea,} from "@mui/material";
+import { Box,  Button, Typography,Grid,Card,CardMedia,CardContent,CardActionArea,} from "@mui/material";
 
 import React from "react";
 import { Link,  useHistory } from "react-router-dom"
@@ -8,7 +8,8 @@ import house from "../asset/house.jpg"
 import garlic from "../asset/garlic.jpg"
 import porch from "../asset/porch.jpg"
 import beach from "../asset/beach.jpg"
-
+import { ToastContainer,toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"
 import MapIcon from '@mui/icons-material/Map';
 import PostAddIcon from '@mui/icons-material/PostAdd';
 import HomeIcon from '@mui/icons-material/Home';
@@ -42,7 +43,12 @@ function Home() {
 
     const loggedIn = () => {
 
-       return localStorage.getItem("clone") ? localStorage.removeItem("clone") : history.push("/login") 
+       if( localStorage.getItem("clone") ){ 
+           localStorage.removeItem("clone")
+           toast.success("Logged out!!") }
+       else{
+            history.push("/login") }
+
     }
     const profile = () => {
         console.log(history)
@@ -130,7 +136,7 @@ function Home() {
 
 
 
-            <Box sx={{  overflow: "hidden"  ,height:"80vh",width:"100%",backgroundRepeat:"no-repeat",backgroundSize:"cover",backgroundAttachment:"fixed", }}>
+            <Box sx={{ height: "auto", overflow: "hidden"  ,height:"80vh",width:"100%",backgroundRepeat:"no-repeat",backgroundSize:"cover",backgroundAttachment:"fixed", }}>
                 <Box component="img" sx={{
 
 
@@ -230,6 +236,7 @@ function Home() {
                 <Box sx={{width:"100%",bgcolor:"black",height:70,display:"flex",justifyContent:"center",alignItems:"center"}}>
                     <Typography sx={{color:"white"}}>@copyrights by capstone </Typography>
                 </Box>
+                <ToastContainer/>
 
         </Box>
     )
